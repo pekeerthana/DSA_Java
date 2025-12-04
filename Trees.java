@@ -26,23 +26,50 @@ public class Trees {
     n4.right = n6;
     n3.left = n7;
 
-    int size = Inorder(root,0);
+    int size = Inorder(root);
     System.out.print("Size of trees is: ");
     System.out.println(size);
+    int sum = getNodeSum(root);
+    System.out.print("Sum of node values is: ");
+    System.out.println(sum);
+    int max = getMax(root);
+    System.out.print("Max value of tree is: ");
+    System.out.println(max);
 
   }
 
-  private static int Inorder(Node root,int size){
-    while(root == null){
-      return size;
+  private static int Inorder(Node root){
+    if(root == null){
+      return 0;
     }
-    size = Inorder(root.left,size+1);
+    int leftSize = Inorder(root.left);
     System.out.println(root.data);
-    size = Inorder(root.right,size);
-    return size;
+    int rightSize = Inorder(root.right);
+    return 1+leftSize+rightSize;
 
   }
 
+  private static int getNodeSum(Node root){
+    if(root == null){
+      return 0;
+    }
 
+    int leftsum = getNodeSum(root.left);
+    System.out.println(leftsum);
+    int rightSum = getNodeSum(root.right);
+    System.out.println(rightSum);
+
+    return root.data+leftsum+rightSum ;
+  }
   
+  private static int getMax(Node root){
+    if(root == null){
+      return Integer.MIN_VALUE ;
+    }
+    int leftMax = getMax(root.left);
+    int rightMax = getMax(root.right);
+
+    return Math.max(Math.max(leftMax,rightMax),root.data);
+
+  }
 }
