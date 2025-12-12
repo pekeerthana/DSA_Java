@@ -7,21 +7,21 @@ public class Stacks {
     Stack<Integer> st = new Stack<Integer>();
 
     //add
-    st.push(1);
-    st.push(10);
-    st.push(33);
-    st.push(34);
-    st.push(99);
-    st.push(23);
+    // st.push(1);
+    // st.push(10);
+    // st.push(33);
+    // st.push(34);
+    // st.push(99);
+    // st.push(23);
 
-    System.out.println(st);
+    // System.out.println(st);
 
-    System.out.println(st.peek());
+    // System.out.println(st.peek());
 
-    st.pop();
-    System.out.println(st);
+    // st.pop();
+    // System.out.println(st);
 
-    System.out.println(st.size());
+    // System.out.println(st.size());
 
       //stack using linkedlist
       LinkedList<Integer> stack = new LinkedList<>();
@@ -32,7 +32,7 @@ public class Stacks {
       stack.addFirst(20);
       stack.addFirst(34);
       stack.addFirst(11);
-
+      System.out.println(stack.peek());
 
       System.out.println(stack.removeFirst());
       System.out.println(stack.removeFirst());
